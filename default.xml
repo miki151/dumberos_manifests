@@ -58,7 +58,7 @@
     <linkfile src="README" dest="external/chromium-webview/README"/>
   </project>
   <project name="LineageOS/android_external_chromium-webview_prebuilt_arm" path="external/chromium-webview/prebuilt/arm" revision="6f94e76a960ac19563b2bf5898c5dc2fc0e16c40" upstream="main" dest-branch="main" groups="pdk"/>
-  <project name="miki151/dumbdroid_webview" path="external/chromium-webview/prebuilt/arm64" revision="master" upstream="master" dest-branch="master" groups="pdk"/>
+  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" revision="master" upstream="master" dest-branch="master" groups="pdk"/>
   <project name="LineageOS/android_external_chromium-webview_prebuilt_x86" path="external/chromium-webview/prebuilt/x86" revision="84c74ff7aedaf4fc5ecae8d693214f5311eba642" upstream="main" dest-branch="main" groups="pdk"/>
   <project name="LineageOS/android_external_chromium-webview_prebuilt_x86_64" path="external/chromium-webview/prebuilt/x86_64" revision="69244c67f5fb359a1ed8db27e9ee55a31d03a480" upstream="main" dest-branch="main" groups="pdk"/>
   <project name="LineageOS/android_external_conscrypt" path="external/conscrypt" revision="f5941499ae8b1aefc5f89627f522b166fecf4bde" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
@@ -383,8 +383,8 @@
   <project name="kernel/prebuilts/mainline/x86-64" path="kernel/prebuilts/mainline/x86_64" remote="aosp" revision="51a4241eb8c63ce034bfcd798d8dff8eaa8325d0" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/tests" remote="aosp" revision="c34dac6e2a701ef73b6b27c71615ef16e997a73d" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="vts,pdk"/>
   <project name="lineageos4microg/android_vendor_partner_gms" path="vendor/partner_gms" revision="d312533afdad1854208ae66082dcbfb28866d37f" upstream="master" dest-branch="master" groups="local::microg"/>
-  <project name="miki151/DumbdroidPanel" revision="master" path="packages/apps/DumbdroidPanel" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/DumbdroidUpdater" revision="master" path="packages/apps/DumbdroidUpdater" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSPanel" revision="master" path="packages/apps/DumbdroidPanel" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSUpdater" revision="master" path="packages/apps/DumbdroidUpdater" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
   <project name="miki151/device_owner" revision="main" path="packages/apps/DumbdroidAdmin" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
   <project name="miki151/treble_app" revision="master" path="treble_app" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_lptools" path="vendor/lptools" revision="c8be7de57b80eab61a6f94ec86464a01fb9056f2" upstream="master" dest-branch="master" groups="local::manifest"/>
