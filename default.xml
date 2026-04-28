@@ -16,8 +16,8 @@
   <default remote="github" revision="refs/heads/lineage-21.0" sync-j="4" sync-c="true"/>
   
   <project name="AndyCGYan/android_packages_apps_QcRilAm" path="packages/apps/QcRilAm" revision="dc599b67cc1e7e9a62ca15eef605e3b2546d0d42" upstream="master" dest-branch="master" groups="local::manifest"/>
-  <project name="DumberOS/android_bionic" path="bionic" revision="6bb1a602f730460da1b7a59ac052078b37e7b384" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_build" path="build/make" revision="f207c23f47e9b7ed35f1c11def2943bf32e04b9f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio">
+  <project name="DumberOS/android_bionic" path="bionic"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_build" path="build/make"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk"/>
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default"/>
     <linkfile src="core" dest="build/core"/>
@@ -25,28 +25,28 @@
     <linkfile src="target" dest="build/target"/>
     <linkfile src="tools" dest="build/tools"/>
   </project>
-  <project name="DumberOS/android_device_lineage_sepolicy" path="device/lineage/sepolicy" revision="dbf51b4152f1f3e731ec5acc666b7a84053536cb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_frameworks_base" path="frameworks/base" revision="8047c7d4b2dc3fae1f62f743d4c3fe56c89fd204" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_hardware_interfaces" path="hardware/interfaces" revision="a8f877f1a8e3d1a4c9dc220b6465481e5d1afc6e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
-  <project name="DumberOS/android_lineage-sdk" path="lineage-sdk" revision="9eb9e98d706e1a439056048a6f4e35d80de29145" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Aperture" path="packages/apps/Aperture" revision="e20dd8ad914f152c1b1c1925e28e7eaaa4ab5f11" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Contacts" path="packages/apps/Contacts" revision="718401e6ad194ef33a9cb17060d8b4f707015245" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Dialer" path="packages/apps/Dialer" revision="6eb4c2569c61e657705ae7e266e214ec51631e08" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Glimpse" path="packages/apps/Glimpse" revision="2fe5c56071731d2f289fc9d4554075e6f0b2941f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_LineageParts" path="packages/apps/LineageParts" revision="fa06e48020c36ccd13674e326a396b516f18590e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Messaging" path="packages/apps/Messaging" revision="61bba87a46afd32df3278b907c269088db1d1ea6" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Settings" path="packages/apps/Settings" revision="d46f308ea81a66713c6365e99c0cd0716f10555f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_SetupWizard" path="packages/apps/SetupWizard" revision="c37842796d85027065f96a9875cb2c14963f7087" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet" revision="0e41275d0863fc0a77d7de812f1b9962acbb6436" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_packages_modules_Bluetooth" path="packages/modules/Bluetooth" revision="0458241e2b5e5cd5510de9bd6ba3fed0e006ca93" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_packages_modules_Wifi" path="packages/modules/Wifi" revision="a0874207784247bd8f4ef86aad747c0aac9dfaeb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_system_core" path="system/core" revision="ff2a4dfeca39632fe602762b3ad6c6a632bbe6b6" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_system_sepolicy" path="system/sepolicy" revision="5b2046a3b362b0f861da786c7a149b8b2fdd8359" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_vendor_lineage" path="vendor/lineage" revision="d13c6ca655cb914d2e9a00ba477864120d61de7e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_vendor_partner_gms" path="vendor/partner_gms" revision="7c53c520b474881b73ce4394773e1e4f48e0cddd" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::microg"/>
-  <project name="DumberOS/device_phh_treble" path="device/phh/treble" revision="ff179e73c6a6148405c2c2e523b035b492068325" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
-  <project name="DumberOS/system" path="system/libbase" revision="0d695d896824f73cc0e812321f95e9b158722c1b" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/vendor_hardware_overlay" path="vendor/hardware_overlay" revision="987443b6b304e85cc6f8088808dba002f2d16b16" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
+  <project name="DumberOS/android_device_lineage_sepolicy" path="device/lineage/sepolicy"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_frameworks_base" path="frameworks/base"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_hardware_interfaces" path="hardware/interfaces"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
+  <project name="DumberOS/android_lineage-sdk" path="lineage-sdk"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Aperture" path="packages/apps/Aperture"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Contacts" path="packages/apps/Contacts"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Dialer" path="packages/apps/Dialer"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Glimpse" path="packages/apps/Glimpse"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_LineageParts" path="packages/apps/LineageParts"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Messaging" path="packages/apps/Messaging"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Settings" path="packages/apps/Settings"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_SetupWizard" path="packages/apps/SetupWizard"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_packages_modules_Bluetooth" path="packages/modules/Bluetooth"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_packages_modules_Wifi" path="packages/modules/Wifi"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_system_core" path="system/core"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_sepolicy" path="system/sepolicy"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_vendor_lineage" path="vendor/lineage"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_vendor_partner_gms" path="vendor/partner_gms"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::microg"/>
+  <project name="DumberOS/device_phh_treble" path="device/phh/treble"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
+  <project name="DumberOS/system" path="system/libbase"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/vendor_hardware_overlay" path="vendor/hardware_overlay"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
   <project name="LineageOS/android" path="android" revision="72b97ec1bcf6498f4a47af4e8336533f147e3c0a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_art" path="art" revision="72ebd02eb8f4360951af04443fe059e67357bfdb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_bootable_recovery" path="bootable/recovery" revision="8d9befac75660d6c62817dc16389c876f73e8f48" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
@@ -389,11 +389,11 @@
   <project name="kernel/prebuilts/mainline/arm64" remote="aosp" revision="49cdfc22db6be7a55ae951e522d5ecadf6293a90" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/prebuilts/mainline/x86-64" path="kernel/prebuilts/mainline/x86_64" remote="aosp" revision="51a4241eb8c63ce034bfcd798d8dff8eaa8325d0" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/tests" remote="aosp" revision="c34dac6e2a701ef73b6b27c71615ef16e997a73d" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,vts"/>
-  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" revision="42fd2d006eeef351c3294bdc3554c3aba0bacd44" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" revision="bda2def80cf5fa22a1e96e1fe58410870b0c2220" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" revision="a8e721ddd73b3a8a9ac932455ce7f781700d51dd" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
-  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" revision="01b15f80af060ef5b91c32e09d6c2b6062dffdbc" upstream="master" dest-branch="master" groups="pdk"/>
-  <project name="miki151/treble_app" path="treble_app" revision="ecf1ddc4d0b9baff9de8f349ccd581781fe8cc7d" upstream="master" dest-branch="master" groups="local::manifest"/>
+  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel"  upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater"  upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin"  upstream="main" dest-branch="main" groups="local::dumbdroid"/>
+  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64"  upstream="master" dest-branch="master" groups="pdk"/>
+  <project name="miki151/treble_app" path="treble_app"  upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_lptools" path="vendor/lptools" revision="c8be7de57b80eab61a6f94ec86464a01fb9056f2" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_magisk" path="vendor/magisk" revision="d8056f8032a0f60f365ddfe5e9fccd7eaf3a655d" upstream="android-10.0" dest-branch="android-10.0" groups="local::manifest"/>
   <project name="phhusson/vendor_vndk-tests" path="vendor/vndk-tests" revision="533390a1d6bc98d86de6b9aab56825c1f03fddcb" upstream="master" dest-branch="master" groups="local::manifest"/>
