@@ -300,7 +300,7 @@
   <project name="LineageOS/android_system_update_engine" path="system/update_engine" revision="e2094a19397a14d378c0404e72dad74d98a45632" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_vold" path="system/vold" revision="f81d91f911a2833251026bb9943c422dea190bd7" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_tools_extract-utils" path="tools/extract-utils" revision="50beec1b4689fe670f27721f4e427e8458224651" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_vendor_apn" path="vendor/apn" revision="cfc8a7ba7c3f4270613e13022cbe2fd003661406" upstream="main" dest-branch="main"/>
+  <project name="DumberOS/android_vendor_apn" path="vendor/apn" upstream="main" dest-branch="main"/>
   <project name="LineageOS/android_vendor_codeaurora_telephony" path="vendor/codeaurora/telephony" revision="6cfafa7df042506e0c48f19e18b5972985177745" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
   <project name="LineageOS/android_vendor_crowdin" path="vendor/crowdin" revision="9b7184415324338267911e79778b0670b2550393" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_vendor_qcom_opensource_agm" path="hardware/qcom-caf/sm8450/audio/agm" revision="5655ea46b94413671cf3b9af14651191c4449dc1" upstream="lineage-21.0-caf-sm8450" dest-branch="lineage-21.0-caf-sm8450" groups="qcom,waipio-vendor"/>
@@ -336,7 +336,7 @@
   <project name="LineageOS/mirror" path="lineage/mirror" revision="28077a60e46ab808a847bd88f6dc19eeac954bec" upstream="main" dest-branch="main" groups="infra"/>
   <project name="LineageOS/scripts" path="lineage/scripts" revision="a73d39d811f6df2561e3bad6b262e8f9d9ce603c" upstream="main" dest-branch="main" groups="tools"/>
   <project name="LineageOS/www" path="lineage/website" revision="60466b7c0cc45fed0c87e69269ce6723efe2d554" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="f75de2aa2af5d2662e394d833464e8dda55c9e6e" upstream="upsilon" dest-branch="upsilon" groups="local::manifest"/>
+  <project name="DumberOS/vendor_gapps" path="vendor/gapps" remote="github" upstream="upsilon" dest-branch="upsilon" groups="local::manifest"/>
   <project name="TrebleDroid/vendor_interfaces" path="vendor/interfaces" revision="78a30ea783c5baa88491d006f166eb60e294c5d0" upstream="android-14.0" dest-branch="android-14.0" groups="local::manifest"/>
   <project name="device/common" remote="aosp" revision="bb1fa9edb22f1c9bf28f07f3d23c20789e61c14c" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,pdk-cw-fs"/>
   <project name="device/generic/arm64" remote="aosp" revision="71380158d818de918338e34a9cb72316fe3cfa4e" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
@@ -389,11 +389,11 @@
   <project name="kernel/prebuilts/mainline/arm64" remote="aosp" revision="49cdfc22db6be7a55ae951e522d5ecadf6293a90" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/prebuilts/mainline/x86-64" path="kernel/prebuilts/mainline/x86_64" remote="aosp" revision="51a4241eb8c63ce034bfcd798d8dff8eaa8325d0" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/tests" remote="aosp" revision="c34dac6e2a701ef73b6b27c71615ef16e997a73d" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,vts"/>
-  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel"  upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater"  upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin"  upstream="main" dest-branch="main" groups="local::dumbdroid"/>
-  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64"  upstream="master" dest-branch="master" groups="pdk"/>
-  <project name="miki151/treble_app" path="treble_app"  upstream="master" dest-branch="master" groups="local::manifest"/>
+  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" revision="master" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" revision="master" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" revision="main" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
+  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" revision="master" upstream="master" dest-branch="master" groups="pdk"/>
+  <project name="miki151/treble_app" path="treble_app"  upstream="master" revision="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_lptools" path="vendor/lptools" revision="c8be7de57b80eab61a6f94ec86464a01fb9056f2" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_magisk" path="vendor/magisk" revision="d8056f8032a0f60f365ddfe5e9fccd7eaf3a655d" upstream="android-10.0" dest-branch="android-10.0" groups="local::manifest"/>
   <project name="phhusson/vendor_vndk-tests" path="vendor/vndk-tests" revision="533390a1d6bc98d86de6b9aab56825c1f03fddcb" upstream="master" dest-branch="master" groups="local::manifest"/>
