@@ -16,8 +16,9 @@
   <default remote="github" revision="refs/heads/lineage-21.0" sync-j="4" sync-c="true"/>
   
   <project name="AndyCGYan/android_packages_apps_QcRilAm" path="packages/apps/QcRilAm" revision="dc599b67cc1e7e9a62ca15eef605e3b2546d0d42" upstream="master" dest-branch="master" groups="local::manifest"/>
-  <project name="DumberOS/android_bionic" path="bionic"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_build" path="build/make"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio">
+  <project name="DumberOS/android_bionic" path="bionic" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_bootable_recovery" path="bootable/recovery" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_build" path="build/make" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio">
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk"/>
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default"/>
     <linkfile src="core" dest="build/core"/>
@@ -25,32 +26,48 @@
     <linkfile src="target" dest="build/target"/>
     <linkfile src="tools" dest="build/tools"/>
   </project>
-  <project name="DumberOS/android_device_lineage_sepolicy" path="device/lineage/sepolicy"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_frameworks_base" path="frameworks/base"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_hardware_interfaces" path="hardware/interfaces"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
-  <project name="DumberOS/android_lineage-sdk" path="lineage-sdk"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Aperture" path="packages/apps/Aperture"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Contacts" path="packages/apps/Contacts"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Dialer" path="packages/apps/Dialer"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Glimpse" path="packages/apps/Glimpse"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_LineageParts" path="packages/apps/LineageParts"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Messaging" path="packages/apps/Messaging"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_Settings" path="packages/apps/Settings"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="DumberOS/android_packages_apps_SetupWizard" path="packages/apps/SetupWizard"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_packages_modules_Bluetooth" path="packages/modules/Bluetooth"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_packages_modules_Wifi" path="packages/modules/Wifi"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_system_core" path="system/core"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_system_sepolicy" path="system/sepolicy"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_vendor_lineage" path="vendor/lineage"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_vendor_partner_gms" path="vendor/partner_gms"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::microg"/>
-  <project name="DumberOS/device_phh_treble" path="device/phh/treble"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
-  <project name="DumberOS/system" path="system/libbase"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/vendor_hardware_overlay" path="vendor/hardware_overlay"  upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
-  <project name="LineageOS/android" path="android" revision="72b97ec1bcf6498f4a47af4e8336533f147e3c0a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_device_lineage_sepolicy" path="device/lineage/sepolicy" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_external_selinux" path="external/selinux" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_frameworks_av" path="frameworks/av" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_frameworks_base" path="frameworks/base" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_frameworks_native" path="frameworks/native" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_frameworks_opt_net_ims" path="frameworks/opt/net/ims" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="frameworks_ims,pdk-cw-fs,pdk-fs"/>
+  <project name="DumberOS/android_frameworks_opt_telephony" path="frameworks/opt/telephony" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_hardware_interfaces" path="hardware/interfaces" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
+  <project name="DumberOS/android_lineage-sdk" path="lineage-sdk" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Aperture" path="packages/apps/Aperture" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Contacts" path="packages/apps/Contacts" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Dialer" path="packages/apps/Dialer" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Glimpse" path="packages/apps/Glimpse" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_LineageParts" path="packages/apps/LineageParts" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Messaging" path="packages/apps/Messaging" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_Settings" path="packages/apps/Settings" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="DumberOS/android_packages_apps_SetupWizard" path="packages/apps/SetupWizard" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_packages_modules_Bluetooth" path="packages/modules/Bluetooth" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_packages_modules_Connectivity" path="packages/modules/Connectivity" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="DumberOS/android_packages_modules_DeviceLock" path="packages/modules/DeviceLock" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="DumberOS/android_packages_modules_DnsResolver" path="packages/modules/DnsResolver" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="DumberOS/android_packages_modules_Wifi" path="packages/modules/Wifi" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
+  <project name="DumberOS/android_packages_services_Telephony" path="packages/services/Telephony" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="DumberOS/android_system_apex" path="system/apex" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_bpf" path="system/bpf" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_core" path="system/core" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_extras" path="system/extras" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_netd" path="system/netd" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_nfc" path="system/nfc" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_sepolicy" path="system/sepolicy" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_system_vold" path="system/vold" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/android_vendor_apn" path="vendor/apn" upstream="main" dest-branch="main"/>
+  <project name="DumberOS/android_vendor_lineage" path="vendor/lineage" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="DumberOS/android_vendor_partner_gms" path="vendor/partner_gms" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::microg"/>
+  <project name="DumberOS/device_phh_treble" path="device/phh/treble" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
+  <project name="DumberOS/system" path="system/libbase" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="DumberOS/vendor_gapps" path="vendor/gapps" upstream="upsilon" dest-branch="upsilon" groups="local::manifest"/>
+  <project name="DumberOS/vendor_hardware_overlay" path="vendor/hardware_overlay" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="local::manifest"/>
+  <project name="LineageOS/android" path="android" revision="2ea653781584e311cb8f031f110a6febf24cec34" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_art" path="art" revision="72ebd02eb8f4360951af04443fe059e67357bfdb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_bootable_recovery" path="bootable/recovery" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="LineageOS/android_build_release" path="build/release" revision="778cac2a4a5684109f7c5e2c8cb312c350c6ab79" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed"/>
+  <project name="LineageOS/android_build_release" path="build/release" revision="63c9746f304a91dd639a3e4b94348ceb63c5d74c" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed"/>
   <project name="LineageOS/android_build_soong" path="build/soong" revision="7e2be266cfde19c5e0cbc8e4ed016d5572abd4fb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed">
     <linkfile src="root.bp" dest="Android.bp"/>
     <linkfile src="bootstrap.bash" dest="bootstrap.bash"/>
@@ -73,18 +90,18 @@
   <project name="LineageOS/android_external_arm-trusted-firmware" path="external/arm-trusted-firmware" revision="c97bac52920e0a1b3995b3bf7d8f5abb4ed1e11a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_avb" path="external/avb" revision="d2c46084c67688a46dac2fd37e3cad0d65850387" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_bash" path="external/bash" revision="e394fc5f5f254fd9b7a16306a84c19d9d9ae886f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_external_chromium-webview_patches" path="external/chromium-webview/patches" revision="b9cadca6725a422f40eba569980534a989876909" upstream="main" dest-branch="main" groups="pdk">
+  <project name="LineageOS/android_external_chromium-webview_patches" path="external/chromium-webview/patches" revision="6594ed2ac2a31164614d1f726749ae419c2aedca" upstream="main" dest-branch="main" groups="pdk">
     <linkfile src="os_pickup.mk" dest="external/chromium-webview/Android.mk"/>
     <linkfile src="CleanSpec.mk" dest="external/chromium-webview/CleanSpec.mk"/>
     <linkfile src="README" dest="external/chromium-webview/README"/>
   </project>
-  <project name="LineageOS/android_external_chromium-webview_prebuilt_arm" path="external/chromium-webview/prebuilt/arm" revision="30f362bd392fbfd8e5779bf90621d2e1a7331b22" upstream="main" dest-branch="main" groups="pdk"/>
-  <project name="LineageOS/android_external_chromium-webview_prebuilt_x86" path="external/chromium-webview/prebuilt/x86" revision="8e3d19287e29d88c2234a9334ef30e8b7a69baa4" upstream="main" dest-branch="main" groups="pdk"/>
-  <project name="LineageOS/android_external_chromium-webview_prebuilt_x86_64" path="external/chromium-webview/prebuilt/x86_64" revision="63a226c7fe6c65a2c195cb099241245bf3ca3a70" upstream="main" dest-branch="main" groups="pdk"/>
+  <project name="LineageOS/android_external_chromium-webview_prebuilt_arm" path="external/chromium-webview/prebuilt/arm" revision="98c3cac9585b8e07071c641b9f086c08d3f97161" upstream="main" dest-branch="main" groups="pdk"/>
+  <project name="LineageOS/android_external_chromium-webview_prebuilt_x86" path="external/chromium-webview/prebuilt/x86" revision="11df557475a62cbf85b1f27b086fc72819d388e0" upstream="main" dest-branch="main" groups="pdk"/>
+  <project name="LineageOS/android_external_chromium-webview_prebuilt_x86_64" path="external/chromium-webview/prebuilt/x86_64" revision="8ad28d8d1c17b2adb3ca71699c76252c98933b35" upstream="main" dest-branch="main" groups="pdk"/>
   <project name="LineageOS/android_external_cldr" path="external/cldr" revision="781c9b69ee237d0f966750c629f5a292c2880851" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_conscrypt" path="external/conscrypt" revision="f5941499ae8b1aefc5f89627f522b166fecf4bde" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_cronet" path="external/cronet" revision="6ec34305bbf8e282d71c695ea226c78642617030" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="LineageOS/android_external_dng_sdk" path="external/dng_sdk" revision="196190dded24e36e74653b3e9d4d89cea72089bd" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="LineageOS/android_external_dng_sdk" path="external/dng_sdk" revision="7ffeaeaf60a128ac2072d1938e2da07377b2f36f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_dtc" path="external/dtc" revision="fd8c8a25dac5f2cc083348f6a3916424b688a508" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_e2fsprogs" path="external/e2fsprogs" revision="d37e9f0ddce5c220aed237c0d97d732c773861cc" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_exfatprogs" path="external/exfatprogs" revision="e9f928271a4a3d7fd087bc82fe1c9e62b1b85a89" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
@@ -112,12 +129,9 @@
   <project name="LineageOS/android_external_webp" path="external/webp" revision="78ea6dfb2ded45ff23bd85bae8ab1f6ddb68b24b" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,qcom_msm8x26"/>
   <project name="LineageOS/android_external_wpa_supplicant_8" path="external/wpa_supplicant_8" revision="43981d45ca035decd00c9f0c2efd62786e5e0229" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_external_zstd" path="external/zstd" revision="fc80ff3c3d0ef8123ebcd901d89ce352d0c191cd" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_frameworks_av" path="frameworks/av" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_frameworks_libs_systemui" path="frameworks/libs/systemui" revision="d55bdacfa07fabb89c22d51b6a9d55105ed67d03" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs,sysui-studio"/>
-  <project name="DumberOS/android_frameworks_native" path="frameworks/native" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_frameworks_opt_calendar" path="frameworks/opt/calendar" revision="4427cc948f59be3d629113db0ba9b947a8637ad8" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_frameworks_opt_colorpicker" path="frameworks/opt/colorpicker" revision="ced14328f287484eba5f113c9177505fee306127" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="DumberOS/android_frameworks_opt_telephony" path="frameworks/opt/telephony" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_frameworks_opt_timezonepicker" path="frameworks/opt/timezonepicker" revision="152fb56a98e8541d9a9d3c895bf2c26317f878fa" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_hardware_broadcom_libbt" path="hardware/broadcom/libbt" revision="2926bf88918c0461ba682e6fa37e24833fa907ea" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_hardware_google_camera" path="hardware/google/camera" revision="df3f282c37ccdeeabce5e4944084e7e16aa88d93" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
@@ -222,62 +236,60 @@
   <project name="LineageOS/android_hardware_st_nfc" path="hardware/st/nfc" revision="24056cf527f6cbd165de48f99f90134fd8a4d52e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_kernel_configs" path="kernel/configs" revision="847bbc49ae44b9161bfafb766202b6dc4d435c17" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,vts"/>
   <project name="LineageOS/android_libcore" path="libcore" revision="81bfea828bc7dc432103cec1331bd6587d98f0a1" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="LineageOS/android_packages_apps_AudioFX" path="packages/apps/AudioFX" revision="e48b3f1388b343a1337fc5f8edde0ad2e48c26e5" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_packages_apps_Backgrounds" path="packages/apps/Backgrounds" revision="e9620a811882db96dbf42bf0da22d571de71da4f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_AudioFX" path="packages/apps/AudioFX" revision="82eff6d1dd4942a339e457f7b9b166ff875997b1" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Backgrounds" path="packages/apps/Backgrounds" revision="7a4c15c1cc7fbf579c8f48718c4579d5130b778f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_Camera2" path="packages/apps/Camera2" revision="d8b5759d205400bb2d4e36c05482ceae0afbc033" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Car_Settings" path="packages/apps/Car/Settings" revision="515d7f14b4cb546f3292307c9546d56ec6f78ed0" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_Car_Settings" path="packages/apps/Car/Settings" revision="81a7a127244d40831aba1c1fb58eb8a52b07021e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_apps_CellBroadcastReceiver" path="packages/apps/CellBroadcastReceiver" revision="cfbf20d2aab7ee61d0a6fc8ff4d2cef0a68defc7" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_CertInstaller" path="packages/apps/CertInstaller" revision="c778789f94a8d27dee3572c82ea39cd106dab6b4" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_DeskClock" path="packages/apps/DeskClock" revision="2c03746cd426fb073e005388b6e34d903bd3300f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_DocumentsUI" path="packages/apps/DocumentsUI" revision="2abe060ffb5aa91b4a71d53c7344c804851ec43f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Eleven" path="packages/apps/Eleven" revision="47ac0522ddf7a9d150ad8982fefc3ac214122dc8" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_CertInstaller" path="packages/apps/CertInstaller" revision="26b721f2bee1097c6a28e3c6a8fa4d2b8730a218" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_DeskClock" path="packages/apps/DeskClock" revision="823f35180ca85c52ec0c996f47eba48e937743d2" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_DocumentsUI" path="packages/apps/DocumentsUI" revision="519c9930aa5eb8486474ef865749c3415dd1e1c9" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_Eleven" path="packages/apps/Eleven" revision="1356857c2eb4daa1082d7ac828f9c896e347be28" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_EmergencyInfo" path="packages/apps/EmergencyInfo" revision="c3f0da3e1b055755647c7728b30e723f4fd0fa41" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Etar" path="packages/apps/Etar" revision="b075cfc4e157ac5f5aa53c68191bcb120b3bece5" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Etar" path="packages/apps/Etar" revision="4f80aee9114c8a9f0d48af7d12d7438e52052907" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_ExactCalculator" path="packages/apps/ExactCalculator" revision="760b63bba45f33696707646d7e62d086e9154808" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_packages_apps_FMRadio" path="packages/apps/FMRadio" revision="6673079c73d856a135cd7809f704dd2b72852f32" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" revision="7ba29b7e9cadf625924dd25f4067fb4029b6c9a2" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_FMRadio" path="packages/apps/FMRadio" revision="2bb61c3e8c6531032b844be00e7732370f03958f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_FlipFlap" path="packages/apps/FlipFlap" revision="09952a51060a682ec05e71c1b4fa36578126ac88" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_Gallery2" path="packages/apps/Gallery2" revision="9c5801d456a616be0a7091e5b3be0f1ff965aeff" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Jelly" path="packages/apps/Jelly" revision="13de78be082944e04334631cd866110f407a7674" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Jelly" path="packages/apps/Jelly" revision="53795f80c036b1c1dac283051a9970259497d26e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_LineageCustomizer" path="packages/apps/LineageCustomizer" revision="6d78f750ddfe8b7b5821a9ce83860755491b8bd8" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_ManagedProvisioning" path="packages/apps/ManagedProvisioning" revision="246fffb1fe297a3d582f8729cb230e5589ec21a9" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Nfc" path="packages/apps/Nfc" revision="b849d9252cbf05741642901a31a1140909d0200c" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="apps_nfc,pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Profiles" path="packages/apps/Profiles" revision="2ab3e02b1683676b08dba9cd6f6688e96b9ea6ec" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="LineageOS/android_packages_apps_Recorder" path="packages/apps/Recorder" revision="09fa4cd8fad7772120025d443ae8a87694b00d27" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Nfc" path="packages/apps/Nfc" revision="89f6c4c912ab8248e89a4d30b4974ef1988fc30d" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="apps_nfc,pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_Profiles" path="packages/apps/Profiles" revision="efc4363e9c5f7cb442d320e7060d518b21ad2c72" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Recorder" path="packages/apps/Recorder" revision="cc620b166aa21c9608e01980330841ee7f2d461a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_Seedvault" path="packages/apps/Seedvault" revision="7da1a5a7d04ff30a348806efca5f0b902fd12cc7" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_SettingsIntelligence" path="packages/apps/SettingsIntelligence" revision="2f2caa0a6524248bfefb63167c4bfcec9c83630b" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_apps_SimpleDeviceConfig" path="packages/apps/SimpleDeviceConfig" revision="82d31b18dd2550e05f89248f128cb571eecc863a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_SimpleSettingsConfig" path="packages/apps/SimpleSettingsConfig" revision="f5620aa22a44ac3a9794d0fda5c146efd7e0a11e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_Stk" path="packages/apps/Stk" revision="12c0bb30b9b54820792f6245e048de42bdf4fc45" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="apps_stk,pdk-fs"/>
   <project name="LineageOS/android_packages_apps_Tag" path="packages/apps/Tag" revision="2844783b03f9a500ba58b64188ce44092e77c5df" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_ThemePicker" path="packages/apps/ThemePicker" revision="e74ca5ce83c13e73143af1b9bfb60027b3206804" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_TvSettings" path="packages/apps/TvSettings" revision="8c182ede7b305b704a06e20988034a551555a547" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_ThemePicker" path="packages/apps/ThemePicker" revision="81383a14999c64f609e12204118d57c4582ad88f" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="LineageOS/android_packages_apps_TvSettings" path="packages/apps/TvSettings" revision="b3969f65d683e9aa3cf9aec3eeb44ce687eca6cb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_apps_TvSystemUI" path="packages/apps/TvSystemUI" revision="adddf3323e91d794360bcdb8b5c8bc15bfe7c042" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_apps_Updater" path="packages/apps/Updater" revision="ffb964b1205d057105bd3a78a423f5a4620edb1a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_apps_Updater" path="packages/apps/Updater" revision="8b29580daddd4846368031e62802553a46068a98" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_apps_WallpaperPicker2" path="packages/apps/WallpaperPicker2" revision="6f89ba3cd7867ccdb629ce53764b79fe69f5a1a1" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs,sysui-studio"/>
-  <project name="LineageOS/android_packages_inputmethods_LatinIME" path="packages/inputmethods/LatinIME" revision="32b9997ef5a08677bb430c877d628ef6291ca790" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
+  <project name="LineageOS/android_packages_inputmethods_LatinIME" path="packages/inputmethods/LatinIME" revision="b313fc95b58fc527cd771e9d6c1b7b170439b686" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_inputmethods_LeanbackIME" path="packages/inputmethods/LeanbackIME" revision="e149bd75e80000e8ce5e1ffe045174c32825924e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_modules_CellBroadcastService" path="packages/modules/CellBroadcastService" revision="4a2371bc646214e4c40ba4d0181ea27dc0c8d3c6" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_packages_modules_Connectivity" path="packages/modules/Connectivity" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_modules_IntentResolver" path="packages/modules/IntentResolver" revision="d7fe592e387740c7bff0d37d4d6670efa43f8d98" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
   <project name="LineageOS/android_packages_modules_Permission" path="packages/modules/Permission" revision="43125d22cbbc10a86fe6b57880230be5bb4c642d" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_modules_Virtualization" path="packages/modules/Virtualization" revision="c03c348aefcbbe95f47b4875c0e3cd5f882b9789" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="LineageOS/android_packages_modules_adb" path="packages/modules/adb" revision="d312257c006bddc7b3f38fd43774259011721a28" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
+  <project name="LineageOS/android_packages_modules_adb" path="packages/modules/adb" revision="b10ce8e4edce5b71d302ec5b33edc84a24be5904" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_packages_modules_common" path="packages/modules/common" revision="722642177b706716fa79a26938d363d438f2c90a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_overlays_Lineage" path="packages/overlays/Lineage" revision="364c55dc593187a8308419275214c7146b3d81a0" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_providers_BlockedNumberProvider" path="packages/providers/BlockedNumberProvider" revision="3601ca213ee14636c63f3406fd5595168b8be0ef" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_providers_BookmarkProvider" path="packages/providers/BookmarkProvider" revision="dd3906226b83e8aada6646069b33ea8a296ce0b5" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_packages_providers_CalendarProvider" path="packages/providers/CalendarProvider" revision="1b7832da5de6cf1a604b4c68b66cf9ac96e201ae" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_providers_CallLogProvider" path="packages/providers/CallLogProvider" revision="e4d5033efd357b034145724eaf29d7a0e75b7fa4" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_providers_ContactsProvider" path="packages/providers/ContactsProvider" revision="249c310fb32f5f0b509c6a4dcc0ef9e82bbb2c72" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_providers_DownloadProvider" path="packages/providers/DownloadProvider" revision="205f6f61f93cfc238bb9db235557fe746d7c0107" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_providers_ContactsProvider" path="packages/providers/ContactsProvider" revision="f9bee10376c499c88481cda1ec660942a1a0bc51" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_providers_DownloadProvider" path="packages/providers/DownloadProvider" revision="a80fb93b7902b6fd2756f6fbf47958662a5d4f10" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_providers_MediaProvider" path="packages/providers/MediaProvider" revision="995c35c506dfcffd6ae37467a9df2ff8d9ef36f1" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_providers_TelephonyProvider" path="packages/providers/TelephonyProvider" revision="f04d9f23bdcb3c7c8d0369c64b402b3833c6b1fe" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="465033b63db2f9e7cf6e4e0bb10f3e3f04d3ffa0" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" revision="b2d0260b24c5ec7e4b93379c621c24b516bcb46c" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_packages_screensavers_PhotoTable" path="packages/screensavers/PhotoTable" revision="c3bb60a519f9a27e62349e64ef8ed85ac84e61d2" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
-  <project name="LineageOS/android_packages_services_Car" path="packages/services/Car" revision="87dd5b88b5963f5b3db281587fdc9eea25fef74e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_services_Mms" path="packages/services/Mms" revision="785c8c9923bb17cfda7cd11bbdd63fca34149bce" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="LineageOS/android_packages_services_Telecomm" path="packages/services/Telecomm" revision="fb17bc822921d30f432bddafd27105afb4528e48" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="DumberOS/android_packages_services_Telephony" path="packages/services/Telephony" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_services_Car" path="packages/services/Car" revision="45c0f0a7a76db7d9d933154204567b3931cc72e8" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_services_Mms" path="packages/services/Mms" revision="ab9989936d5aa8f848cbacfa4827a3324480d436" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
+  <project name="LineageOS/android_packages_services_Telecomm" path="packages/services/Telecomm" revision="033a39afa7f4f800c0da9d48c8dd5a6ea4388020" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="LineageOS/android_packages_wallpapers_LivePicker" path="packages/wallpapers/LivePicker" revision="fa5cc92c8e5dc02a556b1ff9b63f98005f158d19" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-fs"/>
   <project name="LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b" path="prebuilts/clang/kernel/linux-x86/clang-r416183b" revision="54220fd601050b350b2af7adc913089ebf0e7aed" upstream="lineage-20.0" dest-branch="lineage-20.0" clone-depth="1"/>
   <project name="LineageOS/android_prebuilts_extract-tools" path="prebuilts/extract-tools" revision="c23dcd287e58d0149814827c4422dc0a89e7edb8" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" clone-depth="1"/>
@@ -285,24 +297,19 @@
   <project name="LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" revision="111258a10e017f067b27e6cfcea7619d753f3309" upstream="lineage-19.1" dest-branch="lineage-19.1" groups="arm,linux,pdk" clone-depth="1"/>
   <project name="LineageOS/android_prebuilts_gcc_linux-x86_x86_x86_64-linux-android-4.9" path="prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9" revision="5c8aca3781d423cc450c1c05b6ff0813812d65bc" upstream="lineage-19.1" dest-branch="lineage-19.1" groups="linux,pdk,x86" clone-depth="1"/>
   <project name="LineageOS/android_prebuilts_tools-lineage" path="prebuilts/tools-lineage" revision="10b65c9a4181390c2258a8c4f947e31f649b6756" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" clone-depth="1"/>
-  <project name="DumberOS/android_system_bpf" path="system/bpf" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_system_extras" path="system/extras" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_keymaster" path="system/keymaster" revision="672040076536f47f41ccfc4c139238f14b09f49d" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_keymint" path="system/keymint" revision="2f7924b59c3bf5172cbbca72d4ddef764b60504a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_libhidl" path="system/libhidl" revision="0ca22f22769ecc8ddf4ef34d8e0b5fff3d0429e5" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,sysui-studio"/>
   <project name="LineageOS/android_system_libziparchive" path="system/libziparchive" revision="b4252b3cbb4d06a84dc2acb4032aef73d369869e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_logging" path="system/logging" revision="6ee74f7fc9b399fae4acf0dd394a7cfed2811a5d" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_media" path="system/media" revision="a72f7e8f0039a005ae897e5827ce004726020a70" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_system_netd" path="system/netd" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_security" path="system/security" revision="12112e1d80e6c4b31bf1aac46fa5fab940706884" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_timezone" path="system/timezone" revision="329025eb24e8f9fc8e57d2eee3287c58c728ba6e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_tools_mkbootimg" path="system/tools/mkbootimg" revision="90054adc0017398ae868e990e85fd8dc58020c75" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_system_update_engine" path="system/update_engine" revision="e2094a19397a14d378c0404e72dad74d98a45632" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
-  <project name="DumberOS/android_system_vold" path="system/vold" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_tools_extract-utils" path="tools/extract-utils" revision="50beec1b4689fe670f27721f4e427e8458224651" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
-  <project name="DumberOS/android_vendor_apn" path="vendor/apn" upstream="main" dest-branch="main"/>
   <project name="LineageOS/android_vendor_codeaurora_telephony" path="vendor/codeaurora/telephony" revision="6cfafa7df042506e0c48f19e18b5972985177745" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
-  <project name="LineageOS/android_vendor_crowdin" path="vendor/crowdin" revision="9b7184415324338267911e79778b0670b2550393" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
+  <project name="LineageOS/android_vendor_crowdin" path="vendor/crowdin" revision="655b1fdd1a997dbb2887b81a960a04862a4d32b3" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_vendor_qcom_opensource_agm" path="hardware/qcom-caf/sm8450/audio/agm" revision="5655ea46b94413671cf3b9af14651191c4449dc1" upstream="lineage-21.0-caf-sm8450" dest-branch="lineage-21.0-caf-sm8450" groups="qcom,waipio-vendor"/>
   <project name="LineageOS/android_vendor_qcom_opensource_agm" path="hardware/qcom-caf/sm8550/audio/agm" revision="80a4b32861149ba800b2d72597e7b193b6945ba5" upstream="lineage-21.0-caf-sm8550" dest-branch="lineage-21.0-caf-sm8550" groups="kailua-audio,qcom"/>
   <project name="LineageOS/android_vendor_qcom_opensource_arpal-lx" path="hardware/qcom-caf/sm8450/audio/pal" revision="f9669f69314c5d929028ac2e95611c9e4c59ad78" upstream="lineage-21.0-caf-sm8450" dest-branch="lineage-21.0-caf-sm8450" groups="qcom,waipio-vendor"/>
@@ -319,7 +326,7 @@
   <project name="LineageOS/android_vendor_qcom_opensource_display" path="vendor/qcom/opensource/display" revision="74a5c56b6229dbe518b43cf781e4c52e1a5ecb71" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom"/>
   <project name="LineageOS/android_vendor_qcom_opensource_display-commonsys" path="vendor/qcom/opensource/commonsys/display" revision="c23798d2bb75ca8b23c7a5ee12cbbe1d0fbe2973" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
   <project name="LineageOS/android_vendor_qcom_opensource_display-commonsys-intf" path="vendor/qcom/opensource/commonsys-intf/display" revision="bfd8bbc7536d4a06cb4f541a70e029060a0c7e90" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
-  <project name="LineageOS/android_vendor_qcom_opensource_fm-commonsys" path="vendor/qcom/opensource/commonsys/fm" revision="bc444d560d67b72ba62b0d870692823985a13f7a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
+  <project name="LineageOS/android_vendor_qcom_opensource_fm-commonsys" path="vendor/qcom/opensource/commonsys/fm" revision="481d93018113c61cb29f363f08f5d634719bc4f4" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
   <project name="LineageOS/android_vendor_qcom_opensource_healthd-ext" path="vendor/qcom/opensource/healthd-ext" revision="a52cb0139171e1459aeff117d9311ec3c8f99790" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="kailua-vendor,qcom"/>
   <project name="LineageOS/android_vendor_qcom_opensource_interfaces" path="vendor/qcom/opensource/interfaces" revision="4ec046ad5f7402b07f673df1afe941e8466a9bb1" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom,qssi"/>
   <project name="LineageOS/android_vendor_qcom_opensource_libfmjni" path="vendor/qcom/opensource/libfmjni" revision="055b0bed7a5f8822fc7c4658fff44c886177cb9b" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="qcom"/>
@@ -328,15 +335,14 @@
   <project name="LineageOS/android_vendor_qcom_opensource_usb" path="vendor/qcom/opensource/usb" revision="7bdeada792ba7275cdaad26fdf4bce2d968ca725" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="kailua-vendor,qcom"/>
   <project name="LineageOS/android_vendor_qcom_opensource_vibrator" path="vendor/qcom/opensource/vibrator" revision="b8de11976adfc335a2c2981605a40a5e1062ea4a" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="kailua-vendor,qcom"/>
   <project name="LineageOS/android_vendor_qcom_opensource_wfd-commonsys" path="vendor/qcom/opensource/commonsys/wfd" revision="d769796c81927806feb5efdd1a11a8ae0029da0e" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="kailua-video,qcom"/>
-  <project name="LineageOS/charter" path="lineage/charter" revision="e48c07932bfcf24f8156310677f1b9b5937a78ac" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="LineageOS/cm_crowdin" path="lineage/crowdin" revision="414d31a66540e3da5005eed4b0f629caf4042942" upstream="main" dest-branch="main" groups="infra"/>
+  <project name="LineageOS/charter" path="lineage/charter" revision="33d1853d9460695036e9ef384f76f7543e2f1d28" upstream="main" dest-branch="main" groups="infra"/>
+  <project name="LineageOS/cm_crowdin" path="lineage/crowdin" revision="12cc9a876119bf8553d518695529634491478f56" upstream="main" dest-branch="main" groups="infra"/>
   <project name="LineageOS/contributors-cloud-generator" path="lineage/contributors-cloud-generator" revision="b4f0e2854ae40961b1028744df3503ac39792cab" upstream="main" dest-branch="main" groups="tools"/>
-  <project name="LineageOS/hudson" path="lineage/hudson" revision="220afe097981e5026585b857939f392bb8429bb9" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="LineageOS/lineage_wiki" path="lineage/wiki" revision="469ae4f49958ba55e58bf404c969115ecef237e2" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="LineageOS/mirror" path="lineage/mirror" revision="28077a60e46ab808a847bd88f6dc19eeac954bec" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="LineageOS/scripts" path="lineage/scripts" revision="a73d39d811f6df2561e3bad6b262e8f9d9ce603c" upstream="main" dest-branch="main" groups="tools"/>
-  <project name="LineageOS/www" path="lineage/website" revision="60466b7c0cc45fed0c87e69269ce6723efe2d554" upstream="main" dest-branch="main" groups="infra"/>
-  <project name="DumberOS/vendor_gapps" path="vendor/gapps" remote="github" upstream="upsilon" dest-branch="upsilon" groups="local::manifest"/>
+  <project name="LineageOS/hudson" path="lineage/hudson" revision="18236e4d7794dd29cdecc5adf78fac51d763333e" upstream="main" dest-branch="main" groups="infra"/>
+  <project name="LineageOS/lineage_wiki" path="lineage/wiki" revision="67eab3ddc56e354451a9d1d047059d689d1446ee" upstream="main" dest-branch="main" groups="infra"/>
+  <project name="LineageOS/mirror" path="lineage/mirror" revision="fab3b1274a9a5b0d7fd94b6bcf8798929b9aa455" upstream="main" dest-branch="main" groups="infra"/>
+  <project name="LineageOS/scripts" path="lineage/scripts" revision="555516d60e0dc795d00e62cca24638ffbc793ddf" upstream="main" dest-branch="main" groups="tools"/>
+  <project name="LineageOS/www" path="lineage/website" revision="64281cad0662abe2d16c827a6d57d5cffded5972" upstream="main" dest-branch="main" groups="infra"/>
   <project name="TrebleDroid/vendor_interfaces" path="vendor/interfaces" revision="78a30ea783c5baa88491d006f166eb60e294c5d0" upstream="android-14.0" dest-branch="android-14.0" groups="local::manifest"/>
   <project name="device/common" remote="aosp" revision="bb1fa9edb22f1c9bf28f07f3d23c20789e61c14c" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,pdk-cw-fs"/>
   <project name="device/generic/arm64" remote="aosp" revision="71380158d818de918338e34a9cb72316fe3cfa4e" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
@@ -389,11 +395,11 @@
   <project name="kernel/prebuilts/mainline/arm64" remote="aosp" revision="49cdfc22db6be7a55ae951e522d5ecadf6293a90" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/prebuilts/mainline/x86-64" path="kernel/prebuilts/mainline/x86_64" remote="aosp" revision="51a4241eb8c63ce034bfcd798d8dff8eaa8325d0" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/tests" remote="aosp" revision="c34dac6e2a701ef73b6b27c71615ef16e997a73d" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,vts"/>
-  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" revision="master" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" revision="master" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" revision="main" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
-  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" revision="master" upstream="master" dest-branch="master" groups="pdk"/>
-  <project name="miki151/treble_app" path="treble_app"  upstream="master" revision="master" dest-branch="master" groups="local::manifest"/>
+  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
+  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
+  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" upstream="master" dest-branch="master" groups="pdk"/>
+  <project name="miki151/treble_app" path="treble_app" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_lptools" path="vendor/lptools" revision="c8be7de57b80eab61a6f94ec86464a01fb9056f2" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_magisk" path="vendor/magisk" revision="d8056f8032a0f60f365ddfe5e9fccd7eaf3a655d" upstream="android-10.0" dest-branch="android-10.0" groups="local::manifest"/>
   <project name="phhusson/vendor_vndk-tests" path="vendor/vndk-tests" revision="533390a1d6bc98d86de6b9aab56825c1f03fddcb" upstream="master" dest-branch="master" groups="local::manifest"/>
@@ -1113,7 +1119,6 @@
   <project name="platform/external/scudo" path="external/scudo" remote="aosp" revision="0d6ecd1f707ed1cb9c0210db2a5185e3c85fcf22" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/external/sdv/vsomeip" path="external/sdv/vsomeip" remote="aosp" revision="d8333fde128b58141d610bae787cea1c9bf370a9" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/external/seccomp-tests" path="external/seccomp-tests" remote="aosp" revision="512387a627f9285ad50c22d4c54410a321ce9c5b" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
-  <project name="DumberOS/android_external_selinux" path="external/selinux" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="platform/external/setfilters" path="external/setfilters" remote="aosp" revision="46d6e6b2607ff2403e935254203c8330b71001af" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/external/setupdesign" path="external/setupdesign" remote="aosp" revision="383acb28c30502f6a3ee0d2908549c9f3e9cfd2c" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,sysui-studio"/>
   <project name="platform/external/sfntly" path="external/sfntly" remote="aosp" revision="1ceec735689fa94e28187be7a3c29da1b5c636be" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,qcom_msm8x26"/>
@@ -1198,7 +1203,6 @@
   <project name="platform/frameworks/opt/chips" path="frameworks/opt/chips" remote="aosp" revision="de5af9da17a6b774cc543ee5389695400179f574" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/frameworks/opt/localepicker" path="frameworks/opt/localepicker" remote="aosp" revision="d53f3227985af223d97f0835d0b4146c42a6bd57" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67"/>
   <project name="platform/frameworks/opt/net/ethernet" path="frameworks/opt/net/ethernet" remote="aosp" revision="7a9b15127214f86b7d4caa7193f833cf4cb6e8e5" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-fs"/>
-  <project name="DumberOS/android_frameworks_opt_net_ims" path="frameworks/opt/net/ims" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="frameworks_ims,pdk-cw-fs,pdk-fs"/>
   <project name="platform/frameworks/opt/net/voip" path="frameworks/opt/net/voip" remote="aosp" revision="92e8eaa7ff670e584a61efbc7cac81360d7e1a80" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/frameworks/opt/net/wifi" path="frameworks/opt/net/wifi" remote="aosp" revision="8ea518057eca198e286d4dab083a251383d9d5d5" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,sysui-studio"/>
   <project name="platform/frameworks/opt/photoviewer" path="frameworks/opt/photoviewer" remote="aosp" revision="c5dae29e912922db85b9b2446e56ce073f5d907c" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
@@ -1287,8 +1291,6 @@
   <project name="platform/packages/modules/ConfigInfrastructure" path="packages/modules/ConfigInfrastructure" remote="aosp" revision="7671cc7268a9b074813e190884a17d3084d876c3" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/packages/modules/CrashRecovery" path="packages/modules/CrashRecovery" remote="aosp" revision="fdeeab4c41dad3a5dc33acff30aa27b28cc807f2" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/packages/modules/Cronet" path="packages/modules/Cronet" remote="aosp" revision="8879b0aac132668135c6a9869f9388140e8a29b1" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="DumberOS/android_packages_modules_DeviceLock" path="packages/modules/DeviceLock" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="DumberOS/android_packages_modules_DnsResolver" path="packages/modules/DnsResolver" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/packages/modules/ExtServices" path="packages/modules/ExtServices" remote="aosp" revision="2ca29159625e16001f6cd505fb5dbbe020a37e19" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/packages/modules/GeoTZ" path="packages/modules/GeoTZ" remote="aosp" revision="8c7528b9546b9e2dd208ccfa5d6e109c5d9f5278" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
   <project name="platform/packages/modules/Gki" path="packages/modules/Gki" remote="aosp" revision="b4b4d5beb00eb14b43778d71c250feea048ea950" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
@@ -1393,7 +1395,6 @@
   <project name="platform/prebuilts/vndk/v33" path="prebuilts/vndk/v33" remote="aosp" revision="d79ad875113d34c9665a65b8a33dcf7a4fb7dcf1" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="platform/prebuilts/vndk/v34" path="prebuilts/vndk/v34" remote="aosp" revision="7d1ed22adde5b04973c6d0a286e98cefc7b7bee7" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="platform/sdk" path="sdk" remote="aosp" revision="0d3f1ee2fac910ef9aae8567c49039a6165b7c84" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk-cw-fs,pdk-fs"/>
-  <project name="DumberOS/android_system_apex" path="system/apex" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="platform/system/authgraph" path="system/authgraph" remote="aosp" revision="56db71accc831c907a990a29df76a4f15eba8c55" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/bpfprogs" path="system/bpfprogs" remote="aosp" revision="cab45a3a030c8ffb4a619e4b6f83a69626b4b1a6" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/ca-certificates" path="system/ca-certificates" remote="aosp" revision="9f7645c732dcb980036ab9633c9c4cd7a8a04cad" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
@@ -1422,7 +1423,6 @@
   <project name="platform/system/memory/libmemtrack" path="system/memory/libmemtrack" remote="aosp" revision="8c26af722f219bd167b84b3ff37944c47136e70f" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/memory/libmemunreachable" path="system/memory/libmemunreachable" remote="aosp" revision="e2ada4f7e54d357a339bae325aa4ebed92d1fdb2" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/memory/lmkd" path="system/memory/lmkd" remote="aosp" revision="d6f77a700ec468e1d75bad55272ca95e4bf0998e" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
-  <project name="DumberOS/android_system_nfc" path="system/nfc" remote="github" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="platform/system/nvram" path="system/nvram" remote="aosp" revision="d6b8fd3ead1ab5dac63bdc5ce34b5a0161c1aea5" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/secretkeeper" path="system/secretkeeper" remote="aosp" revision="7ba624224f0dc7ccdeced05c0d53988b722a6a34" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
   <project name="platform/system/server_configurable_flags" path="system/server_configurable_flags" remote="aosp" revision="8e4e7235c6eaa9def23623f2325107b7251291b4" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk"/>
