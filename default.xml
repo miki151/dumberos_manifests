@@ -395,11 +395,11 @@
   <project name="kernel/prebuilts/mainline/arm64" remote="aosp" revision="49cdfc22db6be7a55ae951e522d5ecadf6293a90" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/prebuilts/mainline/x86-64" path="kernel/prebuilts/mainline/x86_64" remote="aosp" revision="51a4241eb8c63ce034bfcd798d8dff8eaa8325d0" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk" clone-depth="1"/>
   <project name="kernel/tests" remote="aosp" revision="c34dac6e2a701ef73b6b27c71615ef16e997a73d" upstream="refs/tags/android-14.0.0_r67" dest-branch="refs/tags/android-14.0.0_r67" groups="pdk,vts"/>
-  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" upstream="master" dest-branch="master" groups="local::dumbdroid"/>
-  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" upstream="main" dest-branch="main" groups="local::dumbdroid"/>
-  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" upstream="master" dest-branch="master" groups="pdk"/>
-  <project name="miki151/treble_app" path="treble_app" upstream="master" dest-branch="master" groups="local::manifest"/>
+  <project name="miki151/DumberOSPanel" path="packages/apps/DumbdroidPanel" upstream="master" dest-branch="master" revision="master" groups="local::dumbdroid"/>
+  <project name="miki151/DumberOSUpdater" path="packages/apps/DumbdroidUpdater" upstream="master" dest-branch="master" revision="master" groups="local::dumbdroid"/>
+  <project name="miki151/device_owner" path="packages/apps/DumbdroidAdmin" upstream="main" dest-branch="main" revision="master" groups="local::dumbdroid"/>
+  <project name="miki151/dumberos_webview" path="external/chromium-webview/prebuilt/arm64" upstream="master" revision="master" dest-branch="master" groups="pdk"/>
+  <project name="miki151/treble_app" path="treble_app" upstream="master" revision="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_lptools" path="vendor/lptools" revision="c8be7de57b80eab61a6f94ec86464a01fb9056f2" upstream="master" dest-branch="master" groups="local::manifest"/>
   <project name="phhusson/vendor_magisk" path="vendor/magisk" revision="d8056f8032a0f60f365ddfe5e9fccd7eaf3a655d" upstream="android-10.0" dest-branch="android-10.0" groups="local::manifest"/>
   <project name="phhusson/vendor_vndk-tests" path="vendor/vndk-tests" revision="533390a1d6bc98d86de6b9aab56825c1f03fddcb" upstream="master" dest-branch="master" groups="local::manifest"/>
