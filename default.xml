@@ -68,7 +68,7 @@
   <project name="LineageOS/android" path="android" revision="2ea653781584e311cb8f031f110a6febf24cec34" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0"/>
   <project name="LineageOS/android_art" path="art" revision="72ebd02eb8f4360951af04443fe059e67357bfdb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk"/>
   <project name="LineageOS/android_build_release" path="build/release" revision="63c9746f304a91dd639a3e4b94348ceb63c5d74c" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed"/>
-  <project name="LineageOS/android_build_soong" path="build/soong" revision="7e2be266cfde19c5e0cbc8e4ed016d5572abd4fb" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed">
+  <project name="DumberOS/android_build_soong" path="build/soong" upstream="refs/heads/lineage-21.0" dest-branch="refs/heads/lineage-21.0" groups="pdk,tradefed">
     <linkfile src="root.bp" dest="Android.bp"/>
     <linkfile src="bootstrap.bash" dest="bootstrap.bash"/>
   </project>
